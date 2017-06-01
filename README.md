@@ -2,7 +2,7 @@
 
 El objetivo de este proyecto es realizar un Sorteo para una Rifa y seleccionar un ganador de una lista de usuarios.
 
-Para este proyecto se Utilizaron las siguientes tecnologias:
+Para este proyecto se Utilizaron las siguientes tecnologías:
   - Angular
   - Materialize CSS
   - Rx/js
@@ -29,7 +29,7 @@ cd sorteo
 npm install
 ```
 
-- correr el servidor y entrar a la direccion http://localhost:4200/
+- correr el servidor y entrar a la dirección http://localhost:4200/
  ```sh
 ng serve
 ```
