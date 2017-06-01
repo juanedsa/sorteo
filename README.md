@@ -1,31 +1,37 @@
 # Sorteo
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.
+El objetivo de este proyecto es realizar un Sorteo para una Rifa y seleccionar un ganador de una lista de usuarios.
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Para este proyecto se Utilizaron las siguientes tecnologias:
+  - Angular
+  - Materialize CSS
+  - Rx/js
+  
+# Versiones que se usaron
 
-## Code scaffolding
+  - node: 6.9.1
+  - angular-cli: 1.0.0-beta.28.3
+  - Angular 2.4.10
+ 
+# Proceso de desarrollo
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+Para obtener la lista de usuarios utilice un Api que me provee una lista de usuarios aleatorios [randomuser], una vez los tenia descargados, corro un Intervalo de 30 segundos y voy seleccionando los posibles ganadores hasta llegar al Ganador del sorteo el número 15.
 
-## Build
+# Proceso para poner en marcha.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+- Clonar el proyecto
+```sh
+git clone https://github.com/juanedsa/sorteo.git
+cd sorteo
+```
+- Instalar las dependencias usando node.
+ ```sh
+npm install
+```
 
-## Running unit tests
+- correr el servidor y entrar a la direccion http://localhost:4200/
+ ```sh
+ng serve
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Deploying to GitHub Pages
-
-Run `ng github-pages:deploy` to deploy to GitHub Pages.
-
-## Further help
-
-To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+[randomuser]: <https://randomuser.me>
