@@ -1,0 +1,10 @@
+<ul class="collection" *ngIf="playersService.players | async">
+  <li class="collection-item avatar" *ngFor="let player of playersService.players | async; let i = index;">
+    <img [src]="player.picture.thumbnail" alt="" class="circle">
+    <span class="title blue-text text-darken-2">{{player.name.first}} {{player.name.last}}</span>
+    <p> {{player.email}} <br> {{player.cell}}
+    </p>
+    <a *ngIf="isWinner(i)" class="secondary-content"><i class="material-icons">grade</i> GANADOR</a>
+    <a *ngIf="!isWinner(i)" class="secondary-content"><i class="material-icons icon-red">not_interested</i> Lo Sentimos</a>
+  </li>
+</ul>
