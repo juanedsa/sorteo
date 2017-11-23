@@ -1,33 +1,27 @@
-import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
-import { environment as ENV } from '../../environments/environment';
-import { BehaviorSubject } from 'rxjs/Rx';
+import {Injectable} from '@angular/core';
+import {Http} from '@angular/http';
+import {environment as ENV} from '../../environments/environment';
 
 
 @Injectable()
 export class UserService {
 
-  public _users: BehaviorSubject<Array<any>> = new BehaviorSubject<Array<any>>([]);
+  public _users = <Array<any>>([]);
 
-  constructor(private http: Http) { }
-
-  get users() {
-    return this._users.asObservable();
+  constructor(private http: Http) {
   }
 
   getUsers() {
     this.http.get(`${ENV.api.randomuser}?results=100&nat=es`)
-      .map((data: any) => data.json())
-      .subscribe(users => this._users.next(users.results));
+      .flatMap((data: any) => data.json().results)
+      .map(users => this._users.push(users))
+      .subscribe();
   }
 
   getRandomUser() {
-    const random = this.getRandomInt(0, this._users.getValue().length);
-    const userRandom = this._users.getValue()[random];
-
-    this._users.getValue().slice(random, 1);
-
+    const random = this.getRandomInt(0, this._users.length);
+    const userRandom = this._users[random];
+    this._users.slice(random, 1);
     return userRandom;
   }
 
