@@ -35,7 +35,6 @@ export class SorteoComponent implements OnInit {
 
   private setPlayer() {
     const user = this.userService.getRandomUser();
-
     this.playersService.addPlayer(user);
   }
 }
